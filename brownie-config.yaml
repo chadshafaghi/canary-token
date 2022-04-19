@@ -1,0 +1,27 @@
+dotenv: .env
+dependencies:
+  #- smartcontractkit/chainlink-brownie-contracts@0.2.1
+  - OpenZeppelin/openzeppelin-contracts@4.4.1
+compiler:
+  solc:
+    remappings:
+      #- "@chainlink=smartcontractkit/chainlink-brownie-contracts@0.2.1"
+      - "@openzeppelin=OpenZeppelin/openzeppelin-contracts@4.4.1"
+networks:
+  default: development
+  mainnet-fork:
+    wallet_adr: "0x34d5F2f506437752819fAaefa779b2dC66efB217"
+    wallet_private_key: ${PRIVATE_KEY_MAINNET_ALCHEMY}
+    verify: "True"
+  rinkeby:
+    wallet_adr: "0x76fdbb9EF2De2033431A87AA7603544bdA0C075c"
+    wallet_private_key: ${PRIVATE_KEY_RINKEBY}
+    verify: "True"
+  kovan:
+    wallet_adr: "0x3b1dF08DcA053348A88d6E684Ae4a6A716F19470"
+    wallet_private_key: ${PRIVATE_KEY_KOVAN}
+    verify: "True"
+  ganache-local:
+    verify: "False"
+  development:
+    verify: "False"
