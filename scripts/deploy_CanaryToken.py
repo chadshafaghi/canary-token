@@ -1,9 +1,12 @@
 from brownie import config, network, CanaryToken
+from web3 import Web3
 from scripts.helpful_script import get_account
 
 
 def main():
-    canary_token = deploy_canary_token(initial_supply=6000000)
+
+    supply = Web3.toWei(6000000, "ether")
+    canary_token = deploy_canary_token(initial_supply=supply)
     print(
         "CanaryToken has been deployed at address",
         canary_token.address,

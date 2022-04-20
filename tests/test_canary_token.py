@@ -14,7 +14,7 @@ def test_can_deploy_canary_token():
         pytest.skip()
 
     # arrange
-    initial_supply = 9000000
+    initial_supply = Web3.toWei(5000000, "ether")
     account = get_account()
 
     # act
